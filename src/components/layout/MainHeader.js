@@ -3,14 +3,12 @@ import {
   AppBar,
   Toolbar,
   Box,
-  InputBase,
   Container,
   Link,
   IconButton,
   Divider,
   Button,
   Typography,
-  alpha,
   Avatar,
   Menu,
   MenuItem,
@@ -22,58 +20,13 @@ import { grey } from "@mui/material/colors";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
-import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 
 import logo from "../../logo/yamaha.svg";
 import avatar from "../../images/20210214_162132_.jpg";
-import { Logout } from "@mui/icons-material";
-import { minWidth } from "@mui/system";
+import SearchArea from "../forms/SearchArea";
 
-const settings = ["پروفایل", "خروج"];
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: grey[800],
-  backgroundColor: alpha(grey[400], 0.25),
-  borderRadius: "5px",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingRight: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "40ch",
-    },
-  },
-}));
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
@@ -133,12 +86,7 @@ const MainHeader = () => {
                 <img src={logo} alt="" height="100%" />
               </Link>
             </Box>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon sx={{ color: grey[800] }} />
-              </SearchIconWrapper>
-              <StyledInputBase placeholder="جستجو..." />
-            </Search>
+            <SearchArea />
           </Container>
           <Container
             sx={{
