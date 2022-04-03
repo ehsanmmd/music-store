@@ -26,7 +26,7 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import logo from "../../logo/yamaha.svg";
 import avatar from "../../images/20210214_162132_.jpg";
 import SearchArea from "../forms/SearchArea";
-
+import UserMenu from "../forms/UserMenu";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
@@ -100,29 +100,11 @@ const MainHeader = () => {
                 <IconButton onClick={handleOpenUserMenu}>
                   <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
                 </IconButton>
-                <Menu
-                  open={Boolean(avatarAnchorElement)}
-                  keepMounted
-                  anchorEl={avatarAnchorElement}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
-                  }}
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
-                  onClose={handleCloseUserMenu}
-                >
-                  <MenuItem divider>
-                    <PermIdentityIcon sx={{ ml: "10px" }} />
-                    <Typography color={grey[600]}>پروفایل</Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleLogoutUser}>
-                    <LogoutIcon sx={{ ml: "10px" }} />
-                    <Typography color={grey[600]}>خروج</Typography>
-                  </MenuItem>
-                </Menu>
+                <UserMenu
+                  onCloseUserMenu={handleCloseUserMenu}
+                  onLogoutUser={handleLogoutUser}
+                  avatarAnchorEl={avatarAnchorElement}
+                />
               </Box>
             ) : (
               <StyledButton variant="outlined" onClick={handleloginUser}>
