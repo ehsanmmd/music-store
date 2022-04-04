@@ -10,8 +10,6 @@ import {
   Button,
   Typography,
   Avatar,
-  Menu,
-  MenuItem,
 } from "@mui/material";
 
 import styled from "@emotion/styled";
@@ -20,20 +18,19 @@ import { grey } from "@mui/material/colors";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
-import LogoutIcon from "@mui/icons-material/Logout";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 
 import logo from "../../logo/yamaha.svg";
 import avatar from "../../images/20210214_162132_.jpg";
 import SearchArea from "../forms/SearchArea";
 import UserMenu from "../forms/UserMenu";
+import ProductsMenu from "../forms/ProductsMenu";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
   color: grey[600],
   borderColor: grey[600],
   "&:hover": {
-    backgroundColor: grey[200],
+    backgroundColor: grey[100],
     color: grey[500],
     borderColor: grey[600],
   },
@@ -62,15 +59,12 @@ const MainHeader = () => {
   };
 
   return (
-    <Box sx={{ position: "fixed" }}>
-      <AppBar sx={{ boxShadow: 0 }}>
+    <Box position="sticky" >
+      <AppBar sx={{ boxShadow: 0, backgroundColor: "#ffffff" }}>
         <Toolbar
           sx={{
             backgroundColor: "#ffffff",
             height: "10vh",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
           }}
         >
           <Container
@@ -118,6 +112,14 @@ const MainHeader = () => {
               <ShoppingCartIcon sx={{ margin: "5px" }} />
             </IconButton>
           </Container>
+        </Toolbar>
+        <Toolbar
+          sx={{
+            backgroundColor: "#ffffff",
+            margin: "0 30px",
+          }}
+        >
+          <ProductsMenu />
         </Toolbar>
       </AppBar>
     </Box>
