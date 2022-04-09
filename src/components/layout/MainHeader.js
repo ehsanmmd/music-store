@@ -59,7 +59,6 @@ const MainHeader = () => {
   };
 
   return (
-    <Box position="sticky" >
       <AppBar sx={{ boxShadow: 0, backgroundColor: "#ffffff" }}>
         <Toolbar
           sx={{
@@ -122,7 +121,6 @@ const MainHeader = () => {
           <ProductsMenu />
         </Toolbar>
       </AppBar>
-    </Box>
   );
 };
 export default MainHeader;
