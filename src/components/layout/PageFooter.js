@@ -1,6 +1,7 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
 const PageFooter = (props) => {
-  return <Container />;
+  return <Box sx={{backgroundColor: grey[800], height: "10rem"}}></Box>;
 };
 export default PageFooter;

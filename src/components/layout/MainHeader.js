@@ -59,68 +59,68 @@ const MainHeader = () => {
   };
 
   return (
-      <AppBar sx={{ boxShadow: 0, backgroundColor: "#ffffff" }}>
-        <Toolbar
+    <AppBar sx={{ boxShadow: 0, backgroundColor: "#ffffff" }}>
+      <Toolbar
+        sx={{
+          backgroundColor: "#ffffff",
+          height: "10vh",
+        }}
+      >
+        <Container
           sx={{
-            backgroundColor: "#ffffff",
-            height: "10vh",
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            height: "100%",
           }}
         >
-          <Container
-            sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              height: "100%",
-            }}
-          >
-            <Box sx={{ height: "100%", margin: "10px" }}>
-              <Link href="#">
-                <img src={logo} alt="" height="100%" />
-              </Link>
+          <Box sx={{ height: "100%", margin: "10px" }}>
+            <Link href="#">
+              <img src={logo} alt="" height="100%" />
+            </Link>
+          </Box>
+          <SearchArea />
+        </Container>
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
+          {isLoggedIn ? (
+            <Box>
+              <IconButton onClick={handleOpenUserMenu}>
+                <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
+              </IconButton>
+              <UserMenu
+                onCloseUserMenu={handleCloseUserMenu}
+                onLogoutUser={handleLogoutUser}
+                avatarAnchorEl={avatarAnchorElement}
+              />
             </Box>
-            <SearchArea />
-          </Container>
-          <Container
-            sx={{
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
-          >
-            {isLoggedIn ? (
-              <Box>
-                <IconButton onClick={handleOpenUserMenu}>
-                  <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
-                </IconButton>
-                <UserMenu
-                  onCloseUserMenu={handleCloseUserMenu}
-                  onLogoutUser={handleLogoutUser}
-                  avatarAnchorEl={avatarAnchorElement}
-                />
-              </Box>
-            ) : (
-              <StyledButton variant="outlined" onClick={handleloginUser}>
-                <LoginIcon sx={{ margin: "5px" }} />
-                <Typography textAlign="center">ورود</Typography>
-              </StyledButton>
-            )}
+          ) : (
+            <StyledButton variant="outlined" onClick={handleloginUser}>
+              <LoginIcon sx={{ margin: "5px" }} />
+              <Typography textAlign="center">ورود</Typography>
+            </StyledButton>
+          )}
 
-            <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
-            <IconButton>
-              <ShoppingCartIcon sx={{ margin: "5px" }} />
-            </IconButton>
-          </Container>
-        </Toolbar>
-        <Toolbar
-          sx={{
-            backgroundColor: "#ffffff",
-            margin: "0 30px",
-          }}
-        >
-          <ProductsMenu />
-        </Toolbar>
-      </AppBar>
+          <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
+          <IconButton>
+            <ShoppingCartIcon sx={{ margin: "5px" }} />
+          </IconButton>
+        </Container>
+      </Toolbar>
+      <Toolbar
+        sx={{
+          backgroundColor: "#ffffff",
+          margin: "0 30px",
+        }}
+      >
+        <ProductsMenu />
+      </Toolbar>
+    </AppBar>
   );
 };
 export default MainHeader;
