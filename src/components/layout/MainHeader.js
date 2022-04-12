@@ -39,6 +39,8 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const MainHeader = () => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [avatarAnchorElement, setavatarAnchorElement] = useState(null);
+  const [productsMenuAnchorElement, setproductsMenuAnchorElement] =
+    useState(null);
 
   const handleOpenUserMenu = (event) => {
     setavatarAnchorElement(event.currentTarget);
@@ -58,8 +60,16 @@ const MainHeader = () => {
     setavatarAnchorElement(null);
   };
 
+  const handleCloseProductsMenu = () => {
+    setproductsMenuAnchorElement(null);
+  };
+
+  const handleOpenProductsMenu = (event) => {
+    setavatarAnchorElement(event.currentTarget);
+  };
+
   return (
-    <AppBar sx={{ boxShadow: 0, backgroundColor: "#ffffff" }}>
+    <AppBar sx={{ boxShadow: 1, backgroundColor: "#ffffff" }}>
       <Toolbar
         sx={{
           backgroundColor: "#ffffff",

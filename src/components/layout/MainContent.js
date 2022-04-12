@@ -6,6 +6,7 @@ const MainContent = (props) => {
     <Box>
       <Toolbar />
       <Toolbar />
+      <Toolbar />
       {props.children}
     </Box>
   );

@@ -1,11 +1,33 @@
+import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { grey } from "@mui/material/colors";
 import { Menu, MenuItem, Typography } from "@mui/material";
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
-import { Button } from "@mui/material";import PianoIcon from '@mui/icons-material/Piano';
+import { Button } from "@mui/material";
+
+const productsList = [
+  "پیانو",
+  "کیبورد",
+  "گیتار کلاسیک",
+  "گیتار الکتریک",
+  "گیتار باس",
+  "ویالن",
+  "درامز",
+  "ترومپت",
+];
 
 const ProductsMenu = (props) => {
+  const [productsMenuAnchorElement, setProductsMenuAnchorElement] =
+    useState(null);
+
+  const handleProductMenuClick = (event) => {
+    setProductsMenuAnchorElement(event.currentTarget);
+  };
+
+  const handleProductsMenuClose = () => {
+    setProductsMenuAnchorElement(null);
+  };
+
   return (
     <>
       <Button
@@ -16,35 +38,25 @@ const ProductsMenu = (props) => {
             color: grey[400],
           },
         }}
+        onClick={handleProductMenuClick}
       >
         <MenuIcon sx={{ margin: "5px" }} />
         <Typography variant="h6">محصولات</Typography>
       </Button>
-      <Menu>
-        <MenuItem>
-          <Typography color={grey[600]}>پیانو</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>کیبورد</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>گیتار کلاسیک</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>گیتار الکتریک</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>گیتار باس</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>ویالن</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>درامز</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography color={grey[600]}>ترومپت</Typography>
-        </MenuItem>
+      <Menu
+        open={Boolean(productsMenuAnchorElement)}
+        anchorEl={productsMenuAnchorElement}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        onClose={handleProductsMenuClose}
+      >
+        {productsList.map((product) => {
+          console.log(product);
+          return (
+            <MenuItem sx={{ marginLeft: "1rem" }}>
+              <Typography color={grey[600]}>{product}</Typography>
+            </MenuItem>
+          );
+        })}
       </Menu>
     </>
   );
