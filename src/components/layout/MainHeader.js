@@ -21,9 +21,9 @@ import LoginIcon from "@mui/icons-material/Login";
 
 import logo from "../../logo/yamaha.svg";
 import avatar from "../../images/20210214_162132_.jpg";
-import SearchArea from "../forms/SearchArea";
-import UserMenu from "../forms/UserMenu";
-import ProductsMenu from "../forms/ProductsMenu";
+import SearchArea from "../SearchArea";
+import UserMenu from "../UserMenu";
+import ProductsMenu from "../ProductsMenu";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
@@ -39,8 +39,6 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const MainHeader = () => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [avatarAnchorElement, setavatarAnchorElement] = useState(null);
-  const [productsMenuAnchorElement, setproductsMenuAnchorElement] =
-    useState(null);
 
   const handleOpenUserMenu = (event) => {
     setavatarAnchorElement(event.currentTarget);
@@ -58,14 +56,6 @@ const MainHeader = () => {
   const handleloginUser = () => {
     setisLoggedIn(true);
     setavatarAnchorElement(null);
-  };
-
-  const handleCloseProductsMenu = () => {
-    setproductsMenuAnchorElement(null);
-  };
-
-  const handleOpenProductsMenu = (event) => {
-    setavatarAnchorElement(event.currentTarget);
   };
 
   return (

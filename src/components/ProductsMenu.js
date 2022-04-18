@@ -28,6 +28,10 @@ const ProductsMenu = (props) => {
     setProductsMenuAnchorElement(null);
   };
 
+  // const onMenuItemClick = (event) => {
+  //   props.handleMenuItemClick(event.currentTarget);
+  // };
+
   return (
     <>
       <Button
@@ -49,14 +53,14 @@ const ProductsMenu = (props) => {
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         onClose={handleProductsMenuClose}
       >
-        {productsList.map((product) => {
-          console.log(product);
-          return (
-            <MenuItem sx={{ marginLeft: "1rem" }}>
+        {productsList.map((product) => (
+            <MenuItem
+              sx={{ marginLeft: "1rem" }}
+              key={product}
+            >
               <Typography color={grey[600]}>{product}</Typography>
             </MenuItem>
-          );
-        })}
+       ))}
       </Menu>
     </>
   );
