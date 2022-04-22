@@ -74,9 +74,9 @@ const MainHeader = () => {
             height: "100%",
           }}
         >
-          <Box sx={{ height: "100%", margin: "10px" }}>
-            <Link href="#">
-              <img src={logo} alt="" height="100%" />
+          <Box sx={{ height: "60px", width: "120px"}}>
+            <Link href="/">
+              <img src={logo} />
             </Link>
           </Box>
           <SearchArea />

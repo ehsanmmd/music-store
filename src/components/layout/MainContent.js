@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 
 const MainContent = (props) => {
   return (
-    <Box>
+    <Box sx={{ textAlign: "center" }}>
       <Toolbar />
       <Toolbar />
       <Toolbar />
