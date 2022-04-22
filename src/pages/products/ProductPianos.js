@@ -1,5 +1,4 @@
-import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
-import styled from "@emotion/styled";
+import ProductsShow from "../ProductsShow";
 
 const pianoList = [
   {
@@ -74,41 +73,7 @@ const pianoList = [
   },
 ];
 
-const CardStyle = styled(Card)(({ theme }) => ({
-  borderRadius: theme.spacing(2),
-
-  boxShadow: `rgb(145 158 171 / 64%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 4px 8px -4px`,
-
-  "&:hover": {
-    boxShadow: `rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 16px 32px -4px`,
-  },
-}));
-
 const ProductPianos = (props) => {
-  return (
-    <Grid
-      container
-      spacing={3}
-      sx={{ padding: "2rem", justifyContent: "space-evenly", width: "100%" }}
-    >
-      {pianoList.map((piano) => (
-        <Grid item>
-          <CardStyle>
-            <CardMedia
-              component="img"
-              image={piano.imageUrl}
-              height="240"
-            ></CardMedia>
-            <CardContent>
-              <Typography sx={{ fontFamily: "tahoma", direction: "ltr" }}>
-                {piano.title}
-              </Typography>
-              <Typography>{piano.price} تومان</Typography>
-            </CardContent>
-          </CardStyle>
-        </Grid>
-      ))}
-    </Grid>
-  );
+  return <ProductsShow productList={pianoList}></ProductsShow>;
 };
 export default ProductPianos;
