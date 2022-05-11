@@ -1,6 +1,15 @@
-import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
+import {
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Box,
+  Rating,
+} from "@mui/material";
 import styled from "@emotion/styled";
 import ProductEmpty from "./ProductEmpty";
+import { grey } from "@mui/material/colors";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -25,7 +34,7 @@ const ProductsShow = (props) => {
       }}
     >
       {props.productList.map((product) => (
-        <Grid item>
+        <Grid item key={product.title}>
           <CardStyle>
             <CardMedia
               component="img"
@@ -34,6 +43,14 @@ const ProductsShow = (props) => {
               // max-width="350"
             ></CardMedia>
             <CardContent>
+              <Box sx={{ textAlign: "left" }}>
+                <Rating
+                  size="small"
+                  value={product.rate}
+                  precision="0.5"
+                  sx={{ direction: "ltr", color: grey[500] }}
+                />
+              </Box>
               <Typography sx={{ fontFamily: "tahoma", direction: "ltr" }}>
                 {product.title}
               </Typography>

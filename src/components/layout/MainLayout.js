@@ -5,14 +5,14 @@ import MainContent from "./MainContent";
 import MainHeader from "./MainHeader";
 import PageFooter from "./PageFooter";
 import { Routes, Route } from "react-router-dom";
-import ProductPianos from "../../pages/products/ProductPianos";
-import ProductKeyboards from "../../pages/products/ProductKeyboards";
-import ProductClassicalGuitars from "../../pages/products/ProductBassGuitars";
-import ProductElectricGuitars from "../../pages/products/ProductElectricGuitars";
-import ProductBassGuitars from "../../pages/products/ProductBassGuitars";
-import ProductDrums from "../../pages/products/ProductDrums";
-import ProductViolins from "../../pages/products/ProductViolins";
-import ProductTrumpets from "../../pages/products/ProductTrumpets";
+import ProductPianos from "../../pages/products/productLists/ProductPianos";
+import ProductKeyboards from "../../pages/products/productLists/ProductKeyboards";
+import ProductClassicalGuitars from "../../pages/products/productLists/ProductBassGuitars";
+import ProductElectricGuitars from "../../pages/products/productLists/ProductElectricGuitars";
+import ProductBassGuitars from "../../pages/products/productLists/ProductBassGuitars";
+import ProductDrums from "../../pages/products/productLists/ProductDrums";
+import ProductViolins from "../../pages/products/productLists/ProductViolins";
+import ProductTrumpets from "../../pages/products/productLists/ProductTrumpets";
 
 const MainLayout = (props) => {
   return (

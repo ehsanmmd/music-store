@@ -1,4 +1,4 @@
-import ProductsShow from "../ProductsShow";
+import ProductsShow from "../../ProductsShow";
 
 const classicalGuitarList = [
   // {
