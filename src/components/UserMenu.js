@@ -1,13 +1,10 @@
-
 import { grey } from "@mui/material/colors";
-
 import { Typography, MenuItem, Menu } from "@mui/material";
 
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const UserMenu = (props) => {
-
   return (
     <Menu
       open={Boolean(props.avatarAnchorEl)}

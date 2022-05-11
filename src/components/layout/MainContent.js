@@ -3,11 +3,12 @@ import { Box } from "@mui/system";
 
 const MainContent = (props) => {
   return (
-    <Box sx={{ textAlign: "center" }}>
+    <Box sx={{ minHeight: "90vh" }}>
       <Toolbar />
       <Toolbar />
       <Toolbar />
       {props.children}
+      <Toolbar />
     </Box>
   );
 };

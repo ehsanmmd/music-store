@@ -82,7 +82,7 @@ const ProductsMenu = (props) => {
       >
         {productsList.map((product, index) => (
           <MenuItem
-            sx={{ marginLeft: "1rem" }}
+            sx={{ width: "8rem" }}
             key={index}
             onClick={handleMenuItemClick(product.url)}
           >
