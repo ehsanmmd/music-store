@@ -1,5 +1,6 @@
 import { Box } from "@mui/system";
 import HomePage from "../../pages/HomePage";
+import LoginPage from "../../pages/LoginPage";
 import MainContent from "./MainContent";
 import MainHeader from "./MainHeader";
 import PageFooter from "./PageFooter";
@@ -34,6 +35,7 @@ const MainLayout = (props) => {
           <Route path="/products/violin" element={<ProductViolins />} />
           <Route path="/products/drums" element={<ProductDrums />} />
           <Route path="/products/trumpet" element={<ProductTrumpets />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </MainContent>
       <PageFooter />

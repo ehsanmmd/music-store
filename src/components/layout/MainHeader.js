@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -11,6 +12,7 @@ import {
   Typography,
   Avatar,
 } from "@mui/material";
+import UserContext from "../../store/user-context";
 
 import styled from "@emotion/styled";
 
@@ -37,8 +39,9 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const MainHeader = () => {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
   const [avatarAnchorElement, setavatarAnchorElement] = useState(null);
+  let navigate = useNavigate();
+  const userCtx = useContext(UserContext);
 
   const handleOpenUserMenu = (event) => {
     setavatarAnchorElement(event.currentTarget);
@@ -49,12 +52,13 @@ const MainHeader = () => {
   };
 
   const handleLogoutUser = () => {
-    setisLoggedIn(false);
     setavatarAnchorElement(null);
+    userCtx.onLoggout();
   };
 
   const handleloginUser = () => {
-    setisLoggedIn(true);
+    // setisLoggedIn(true);
+    navigate("/login");
     setavatarAnchorElement(null);
   };
 
@@ -88,7 +92,7 @@ const MainHeader = () => {
             alignItems: "center",
           }}
         >
-          {isLoggedIn ? (
+          {(userCtx.isLoggedIn === true) ? (
             <Box>
               <IconButton onClick={handleOpenUserMenu}>
                 <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
