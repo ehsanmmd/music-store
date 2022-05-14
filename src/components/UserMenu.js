@@ -21,11 +21,11 @@ const UserMenu = (props) => {
       onClose={props.onCloseUserMenu}
     >
       <MenuItem divider>
-        <PermIdentityIcon sx={{ ml: "10px" }} />
+        <PermIdentityIcon sx={{ ml: "10px", color: grey[600] }} />
         <Typography color={grey[600]}>پروفایل</Typography>
       </MenuItem>
       <MenuItem onClick={props.onLogoutUser}>
-        <LogoutIcon sx={{ ml: "10px" }} />
+        <LogoutIcon sx={{ ml: "10px", color: grey[600] }} />
         <Typography color={grey[600]}>خروج</Typography>
       </MenuItem>
     </Menu>
