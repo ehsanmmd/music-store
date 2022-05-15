@@ -4,7 +4,6 @@ import { grey } from "@mui/material/colors";
 import GreyButton from "../components/GreyButton";
 import { useState, useContext } from "react";
 import UserContext from "../store/user-context";
-import { useNavigate } from "react-router";
 
 const BoxLoginStyle = styled(Box)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -19,8 +18,6 @@ const BoxLoginStyle = styled(Box)(({ theme }) => ({
 const LoginPage = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  let navigate = useNavigate();
 
   const userCtx = useContext(UserContext);
 
