@@ -1,5 +1,6 @@
 export const productsList = [
   {
+    uid: "kbrd_psre363",
     category: "keyboard",
     title: "PSR_E363",
     rate: 4.3,
@@ -8,6 +9,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_E363.jpg"),
   },
   {
+    uid: "kbrd_psre473",
     category: "keyboard",
     title: "PSR_E473",
     rate: 4.4,
@@ -16,6 +18,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_E473.jpg"),
   },
   {
+    uid: "kbrd_psrew425",
     category: "keyboard",
     title: "PSR_EW425",
     rate: 4.4,
@@ -24,6 +27,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_EW425.jpg"),
   },
   {
+    uid: "kbrd_psrf51",
     category: "keyboard",
     title: "PSR_F51",
     rate: 4.4,
@@ -32,6 +36,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_F51.jpg"),
   },
   {
+    uid: "kbrd_psrs950",
     category: "keyboard",
     title: "PSR_S950",
     rate: 4.4,
@@ -40,6 +45,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_S950.jpg"),
   },
   {
+    uid: "kbrd_psrs975",
     category: "keyboard",
     title: "PSR_S975",
     rate: 4.4,
@@ -48,6 +54,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSR_S975.jpg"),
   },
   {
+    uid: "kbrd_psre443",
     category: "keyboard",
     title: "PSRE443",
     rate: 4.4,
@@ -56,6 +63,7 @@ export const productsList = [
     imageUrl: require("../images/Products/keyboard/PSRE443.jpg"),
   },
   {
+    uid: "pno_clp795gp",
     category: "piano",
     title: "CLP-795GP",
     rate: 4.3,
@@ -64,6 +72,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/CLP-795GPPE_th.jpg"),
   },
   {
+    uid: "pno_clp785",
     category: "piano",
     title: "CLP-785",
     rate: 4.1,
@@ -72,6 +81,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/CLP-785PE_th.jpg"),
   },
   {
+    uid: "pno_cvp701",
     category: "piano",
     title: "CVP-701",
     rate: 3.5,
@@ -80,6 +90,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/CVP-701.jpg"),
   },
   {
+    uid: "pno_cvp809",
     category: "piano",
     title: "CVP-809",
     rate: 3.9,
@@ -88,6 +99,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/CVP-809.jpg"),
   },
   {
+    uid: "pno_cvp809gp",
     category: "piano",
     title: "CVP-809GP",
     rate: 4.7,
@@ -96,6 +108,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/CVP-809GP.jpg"),
   },
   {
+    uid: "pno_dgx660",
     category: "piano",
     title: "DGX-660",
     rate: 4.9,
@@ -104,6 +117,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/DGX-660.jpg"),
   },
   {
+    uid: "pno_dgx670",
     category: "piano",
     title: "DGX-670",
     rate: 3,
@@ -112,6 +126,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/DGX-670.jpg"),
   },
   {
+    uid: "pno_dgx660",
     category: "piano",
     title: "GB1K-1",
     rate: 3.8,
@@ -120,6 +135,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/GB1K-1.jpg"),
   },
   {
+    uid: "pno_p515",
     category: "piano",
     title: "P-515",
     rate: 4.4,
@@ -128,6 +144,7 @@ export const productsList = [
     imageUrl: require("../images/Products/piano/P-515.jpg"),
   },
   {
+    uid: "pno_ydp184",
     category: "piano",
     title: "YDP-184",
     rate: 4.2,
