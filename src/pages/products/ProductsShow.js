@@ -51,7 +51,7 @@ const ProductsShow = (props) => {
                 <Rating
                   size="small"
                   value={product.rate}
-                  precision="0.5"
+                  precision={0.5}
                   sx={{ direction: "ltr", color: grey[500] }}
                 />
               </Box>
