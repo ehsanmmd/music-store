@@ -10,6 +10,7 @@ import {
 import styled from "@emotion/styled";
 import ProductEmpty from "./ProductEmpty";
 import { grey } from "@mui/material/colors";
+import { productsList } from "../../api/productApi";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -22,7 +23,10 @@ const CardStyle = styled(Card)(({ theme }) => ({
 }));
 
 const ProductsShow = (props) => {
-  return props.productList.length > 0 ? (
+  const filteredProducts = productsList.filter(
+    (product) => product.category === props.category
+  );
+  return filteredProducts.length > 0 ? (
     <Grid
       container
       spacing={3}
@@ -33,7 +37,7 @@ const ProductsShow = (props) => {
         flexWrap: "wrap",
       }}
     >
-      {props.productList.map((product) => (
+      {filteredProducts.map((product) => (
         <Grid item key={product.title}>
           <CardStyle>
             <CardMedia
