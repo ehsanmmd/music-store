@@ -6,11 +6,13 @@ import {
   Typography,
   Box,
   Rating,
+  IconButton,
 } from "@mui/material";
 import styled from "@emotion/styled";
 import ProductEmpty from "./ProductEmpty";
 import { grey } from "@mui/material/colors";
 import { productsList } from "../../api/productApi";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -47,14 +49,27 @@ const ProductsShow = (props) => {
               // max-width="350"
             ></CardMedia>
             <CardContent>
-              <Box sx={{ textAlign: "left" }}>
-                <Rating
-                  size="small"
-                  value={product.rate}
-                  precision={0.5}
-                  sx={{ direction: "ltr", color: grey[500] }}
-                />
-              </Box>
+              {/* <Box sx={{ textAlign: "left" }}> */}
+              <Grid
+                container
+                direction="row-reverse"
+                justifyContent="space-between"
+              >
+                <Grid item>
+                  <Rating
+                    size="small"
+                    value={product.rate}
+                    precision={0.5}
+                    sx={{ direction: "ltr", color: grey[500] }}
+                  />
+                </Grid>
+                <Grid>
+                  <IconButton>
+                    <AddCircleIcon></AddCircleIcon>
+                  </IconButton>
+                </Grid>
+              </Grid>
+              {/* </Box> */}
               <Typography sx={{ fontFamily: "tahoma", direction: "ltr" }}>
                 {product.title}
               </Typography>
