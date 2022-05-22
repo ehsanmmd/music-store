@@ -13,6 +13,9 @@ import ProductEmpty from "./ProductEmpty";
 import { grey } from "@mui/material/colors";
 import { productsList } from "../../api/productApi";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { useContext } from "react";
+import UserContext from "../../store/user-context";
+import { CommentsDisabledOutlined } from "@mui/icons-material";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -25,9 +28,17 @@ const CardStyle = styled(Card)(({ theme }) => ({
 }));
 
 const ProductsShow = (props) => {
+  const userCtx = useContext(UserContext);
+
+  const addToCartHandler = (id) => () => {
+    var selectedProduct = productsList.find((p) => p.uid === id);
+    userCtx.pushIntoCartItems(selectedProduct);
+  };
+
   const filteredProducts = productsList.filter(
     (product) => product.category === props.category
   );
+
   return filteredProducts.length > 0 ? (
     <Grid
       container
@@ -64,7 +75,7 @@ const ProductsShow = (props) => {
                   />
                 </Grid>
                 <Grid>
-                  <IconButton>
+                  <IconButton onClick={addToCartHandler(product.uid)}>
                     <AddCircleIcon></AddCircleIcon>
                   </IconButton>
                 </Grid>
