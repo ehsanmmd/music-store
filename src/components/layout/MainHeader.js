@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AppBar,
@@ -11,6 +11,7 @@ import {
   Button,
   Typography,
   Avatar,
+  Badge,
 } from "@mui/material";
 import UserContext from "../../store/user-context";
 
@@ -92,7 +93,7 @@ const MainHeader = () => {
             alignItems: "center",
           }}
         >
-          {(userCtx.isLoggedIn === true) ? (
+          {userCtx.isLoggedIn === true ? (
             <Box>
               <IconButton onClick={handleOpenUserMenu}>
                 <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
@@ -112,7 +113,9 @@ const MainHeader = () => {
 
           <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
           <IconButton>
-            <ShoppingCartIcon sx={{ margin: "5px" }} />
+            <Badge badgeContent={userCtx.cartItems.length} color="warning">
+              <ShoppingCartIcon sx={{ margin: "5px" }} />
+            </Badge>
           </IconButton>
         </Container>
       </Toolbar>
