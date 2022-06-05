@@ -12,12 +12,12 @@ const HomePage = (props) => {
       <Helmet>
         <title>Yamaha Music Store</title>
       </Helmet>
-      <Carousel interval="4000" indicators={false} sx={{ boxShadow: "0" }} >
-        <img src={aks1} style={{ maxWidth: "100vw" }} />
-        <img src={aks2} style={{ maxWidth: "100vw" }} />
-        <img src={aks3} style={{ maxWidth: "100vw" }} />
-        <img src={aks4} style={{ maxWidth: "100vw" }} />
-        <img src={aks5} style={{ maxWidth: "100vw" }} />
+      <Carousel interval="4000" indicators={false} sx={{ boxShadow: "0" }}>
+        <img src={aks1} alt="" style={{ maxWidth: "100vw" }} />
+        <img src={aks2} alt="" style={{ maxWidth: "100vw" }} />
+        <img src={aks3} alt="" style={{ maxWidth: "100vw" }} />
+        <img src={aks4} alt="" style={{ maxWidth: "100vw" }} />
+        <img src={aks5} alt="" style={{ maxWidth: "100vw" }} />
       </Carousel>
     </>
   );

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AppBar,
@@ -63,6 +63,10 @@ const MainHeader = () => {
     setavatarAnchorElement(null);
   };
 
+  const handleCartIconClick = () => {
+    navigate("/cart");
+  };
+
   return (
     <AppBar sx={{ boxShadow: 1, backgroundColor: "#ffffff" }}>
       <Toolbar
@@ -110,13 +114,16 @@ const MainHeader = () => {
               <Typography textAlign="center">ورود</Typography>
             </StyledButton>
           )}
-
-          <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
-          <IconButton>
-            <Badge badgeContent={userCtx.cartItems.length} color="warning">
-              <ShoppingCartIcon sx={{ margin: "5px" }} />
-            </Badge>
-          </IconButton>
+          {userCtx.isLoggedIn === true && (
+            <>
+              <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
+              <IconButton onClick={handleCartIconClick}>
+                <Badge badgeContent={userCtx.cartItems.length} color="warning">
+                  <ShoppingCartIcon sx={{ margin: "5px" }} />
+                </Badge>
+              </IconButton>
+            </>
+          )}
         </Container>
       </Toolbar>
       <Toolbar

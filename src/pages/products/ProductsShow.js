@@ -4,7 +4,6 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  Box,
   Rating,
   IconButton,
 } from "@mui/material";
@@ -15,7 +14,6 @@ import { productsList } from "../../api/productApi";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useContext } from "react";
 import UserContext from "../../store/user-context";
-import { CommentsDisabledOutlined } from "@mui/icons-material";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -84,7 +82,15 @@ const ProductsShow = (props) => {
               <Typography sx={{ fontFamily: "tahoma", direction: "ltr" }}>
                 {product.title}
               </Typography>
-              <Typography>{product.price} تومان</Typography>
+              <Typography>{product.offPrice} تومان</Typography>
+              {product.offPrice !== product.price && (
+                <Typography
+                  color={grey[500]}
+                  sx={{ textDecoration: "line-through" }}
+                >
+                  {product.price}
+                </Typography>
+              )}
             </CardContent>
           </CardStyle>
         </Grid>

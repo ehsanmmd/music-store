@@ -12,8 +12,6 @@ export const UserContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState("false");
   const [cartItems, setCartItems] = useState([]);
 
-  console.log(cartItems);
-
   const loginHandler = () => {
     setIsLoggedIn(true);
   };
@@ -23,7 +21,6 @@ export const UserContextProvider = (props) => {
   };
 
   const pushIntoCartItemsHandler = (item) => {
-    console.log(cartItems);
     setCartItems((cartItems) => {
       return [...cartItems, item];
     });

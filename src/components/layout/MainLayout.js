@@ -1,10 +1,11 @@
 import { Box } from "@mui/system";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "../../pages/HomePage";
 import LoginPage from "../../pages/LoginPage";
+import CartPage from "../../pages/CartPage";
 import MainContent from "./MainContent";
 import MainHeader from "./MainHeader";
 import PageFooter from "./PageFooter";
-import { Routes, Route } from "react-router-dom";
 import ProductPianos from "../../pages/products/productLists/ProductPianos";
 import ProductKeyboards from "../../pages/products/productLists/ProductKeyboards";
 import ProductClassicalGuitars from "../../pages/products/productLists/ProductBassGuitars";
@@ -36,6 +37,7 @@ const MainLayout = (props) => {
           <Route path="/products/drums" element={<ProductDrums />} />
           <Route path="/products/trumpet" element={<ProductTrumpets />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </MainContent>
       <PageFooter />
