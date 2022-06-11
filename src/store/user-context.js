@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { productsList } from "../api/productApi";
 
 const UserContext = React.createContext({
   isLoggedIn: false,
   cartItems: [],
-  pushIntoCartItems: () => {},
+  pushIntoCartItems: (id) => {},
+  deleteFromCartItems: (id) => {},
   onLogin: (email, password) => {},
   onLoggout: () => {},
 });
@@ -20,9 +22,19 @@ export const UserContextProvider = (props) => {
     setIsLoggedIn(false);
   };
 
-  const pushIntoCartItemsHandler = (item) => {
+  const pushIntoCartItemsHandler = (id) => { 
+    
+    var item = productsList.find((p) => p.uid === id);
     setCartItems((cartItems) => {
       return [...cartItems, item];
+    });
+  };
+
+  const deleteFromCartItemsHandler = (uid) => {
+    const selectedItemIndex = cartItems.findIndex((item) => item.uid === uid);
+    setCartItems((cartItems) => {
+      cartItems.splice(selectedItemIndex, 1);
+      return cartItems;
     });
   };
 
@@ -32,6 +44,7 @@ export const UserContextProvider = (props) => {
         isLoggedIn: isLoggedIn,
         cartItems: cartItems,
         pushIntoCartItems: pushIntoCartItemsHandler,
+        deleteFromCartItems: deleteFromCartItemsHandler,
         onLogin: loginHandler,
         onLoggout: logoutHandler,
       }}

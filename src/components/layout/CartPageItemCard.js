@@ -30,7 +30,7 @@ const CartPageItemCard = (props) => {
               </Grid>
               <Grid item textAlign="left">
                 <Typography>{props.children.price} تومان</Typography>
-                <IconButton sx={{ mt: "10px" }}>
+                <IconButton sx={{ mt: "10px" }} onClick = {props.onDeleteClick(props.children.uid)}>
                   <DeleteIcon />
                 </IconButton>
               </Grid>

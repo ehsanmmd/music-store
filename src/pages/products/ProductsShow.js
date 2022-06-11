@@ -16,6 +16,7 @@ import { useContext } from "react";
 import UserContext from "../../store/user-context";
 
 const CardStyle = styled(Card)(({ theme }) => ({
+  height: "400px",
   borderRadius: theme.spacing(2),
 
   boxShadow: `rgb(145 158 171 / 64%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 4px 8px -4px`,
@@ -29,8 +30,7 @@ const ProductsShow = (props) => {
   const userCtx = useContext(UserContext);
 
   const addToCartHandler = (id) => () => {
-    var selectedProduct = productsList.find((p) => p.uid === id);
-    userCtx.pushIntoCartItems(selectedProduct);
+    userCtx.pushIntoCartItems(id);
   };
 
   const filteredProducts = productsList.filter(
@@ -44,7 +44,7 @@ const ProductsShow = (props) => {
       sx={{
         padding: "2rem",
         width: "100%",
-        justifyContent: "space-evenly",
+        justifyContent: "flex-start",
         flexWrap: "wrap",
       }}
     >

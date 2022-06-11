@@ -1,32 +1,39 @@
 import { useContext } from "react";
 import UserContext from "../store/user-context";
 import CartPageItemCard from "../components/layout/CartPageItemCard";
-import { Grid, Box, Typography, styled } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import emptyCartSvg from "../images/empty-cart.svg"
+import emptyCartSvg from "../images/empty-cart.svg";
 import Billing from "../components/Billing";
-
-
 
 const CartPage = (props) => {
   const userCtx = useContext(UserContext);
+
+  const deleteItemHandler = (uid) => () => {
+    userCtx.deleteFromCartItems(uid);
+  };
+
   const cartContent = (
     <Grid container direction="row" gap="2%">
       <Grid container direction="column" gap="10px" width="49%">
         {userCtx.cartItems.map((item) => (
-          <CartPageItemCard key={item.uid}>{item}</CartPageItemCard>
+          <CartPageItemCard key={item.uid} onDeleteClick={deleteItemHandler}>
+            {item}
+          </CartPageItemCard>
         ))}
       </Grid>
       <Grid item width="47%">
-        <Billing items = {userCtx.cartItems}/>
+        <Billing items={userCtx.cartItems} />
       </Grid>
     </Grid>
   );
 
   const emptyCart = (
-    <Box sx={{ height: "300px"}} textAlign="center" >
-        <img alt="" src={emptyCartSvg} height="100%" />
-        <Typography color={grey[600]} variant="h5" m="2rem">شما محصولی در سبد خرید ندارید</Typography>
+    <Box sx={{ height: "300px" }} textAlign="center">
+      <img alt="" src={emptyCartSvg} height="100%" />
+      <Typography color={grey[600]} variant="h5" m="2rem">
+        شما محصولی در سبد خرید ندارید
+      </Typography>
     </Box>
   );
   return (
