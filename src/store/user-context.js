@@ -20,10 +20,10 @@ export const UserContextProvider = (props) => {
 
   const logoutHandler = () => {
     setIsLoggedIn(false);
+    setCartItems([]);
   };
 
-  const pushIntoCartItemsHandler = (id) => { 
-    
+  const pushIntoCartItemsHandler = (id) => {
     var item = productsList.find((p) => p.uid === id);
     setCartItems((cartItems) => {
       return [...cartItems, item];
@@ -31,9 +31,7 @@ export const UserContextProvider = (props) => {
   };
 
   const deleteFromCartItemsHandler = (uid) => {
-    setCartItems((cartItems) => (
-       cartItems.filter(item => item.uid !== uid)
-    ))
+    setCartItems((cartItems) => cartItems.filter((item) => item.uid !== uid));
   };
 
   return (
