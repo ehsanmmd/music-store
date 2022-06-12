@@ -31,11 +31,9 @@ export const UserContextProvider = (props) => {
   };
 
   const deleteFromCartItemsHandler = (uid) => {
-    const selectedItemIndex = cartItems.findIndex((item) => item.uid === uid);
-    setCartItems((cartItems) => {
-      cartItems.splice(selectedItemIndex, 1);
-      return cartItems;
-    });
+    setCartItems((cartItems) => (
+       cartItems.filter(item => item.uid !== uid)
+    ))
   };
 
   return (
