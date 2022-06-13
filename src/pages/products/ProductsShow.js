@@ -53,7 +53,7 @@ const ProductsShow = (props) => {
           <CardStyle>
             <CardMedia
               component="img"
-              image={product.imageUrl}
+              image={product.imageMdUrl}
               height="240"
               // max-width="350"
             ></CardMedia>

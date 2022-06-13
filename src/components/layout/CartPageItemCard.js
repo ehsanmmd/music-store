@@ -12,7 +12,7 @@ const CartPageItemCard = (props) => {
     <Grid item>
       <BoxStyle width="auto">
         <Grid container direction="row" justifyContent="space-between">
-          <img src={props.children.imageUrl} alt="" height="150px" />
+          <img src={props.children.imageSmUrl} alt="" height="150px" />
           <Grid item>
             <Grid
               container
