@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import UserContext from "../store/user-context";
-import CartPageItemCard from "../components/layout/CartPageItemCard";
+import CartPageItemCard from "../components/CartPageItemCard";
 import { Grid, Box, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import emptyCartSvg from "../images/empty-cart.svg";
