@@ -10,6 +10,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_E363_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_E363_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_E363_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psre473",
@@ -22,6 +30,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_E473_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_E473_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_E473_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psrew425",
@@ -34,6 +50,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_EW425_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_EW425_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_EW425_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psrf51",
@@ -46,6 +70,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_F51_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_F51_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_F51_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psrs950",
@@ -58,6 +90,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_S950_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_S950_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_S950_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psrs975",
@@ -70,6 +110,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSR_S975_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSR_S975_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSR_S975_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "kbrd_psre443",
@@ -82,6 +130,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/keyboard/PSRE443_lg.jpg"),
     imageMdUrl: require("../images/Products/keyboard/PSRE443_md.jpg"),
     imageSmUrl: require("../images/Products/keyboard/PSRE443_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_clp795gp",
@@ -94,6 +150,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/CLP-795GPPE_th_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/CLP-795GPPE_th_md.jpg"),
     imageSmUrl: require("../images/Products/piano/CLP-795GPPE_th_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_clp785",
@@ -106,6 +170,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/CLP-785PE_th_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/CLP-785PE_th_md.jpg"),
     imageSmUrl: require("../images/Products/piano/CLP-785PE_th_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_cvp701",
@@ -118,6 +190,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/CVP-701_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/CVP-701_md.jpg"),
     imageSmUrl: require("../images/Products/piano/CVP-701_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_cvp809",
@@ -130,6 +210,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/CVP-809_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/CVP-809_md.jpg"),
     imageSmUrl: require("../images/Products/piano/CVP-809_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_cvp809gp",
@@ -142,6 +230,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/CVP-809GP_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/CVP-809GP_md.jpg"),
     imageSmUrl: require("../images/Products/piano/CVP-809GP_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_dgx660",
@@ -154,6 +250,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/DGX-660_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/DGX-660_md.jpg"),
     imageSmUrl: require("../images/Products/piano/DGX-660_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_dgx670",
@@ -166,6 +270,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/DGX-670_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/DGX-670_md.jpg"),
     imageSmUrl: require("../images/Products/piano/DGX-670_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_dgx660",
@@ -178,6 +290,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/GB1K-1_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/GB1K-1_md.jpg"),
     imageSmUrl: require("../images/Products/piano/GB1K-1_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_p515",
@@ -190,6 +310,14 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/P-515_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/P-515_md.jpg"),
     imageSmUrl: require("../images/Products/piano/P-515_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
   {
     uid: "pno_ydp184",
@@ -202,5 +330,13 @@ export const productsList = [
     imageLgUrl: require("../images/Products/piano/YDP-184_lg.jpg"),
     imageMdUrl: require("../images/Products/piano/YDP-184_md.jpg"),
     imageSmUrl: require("../images/Products/piano/YDP-184_sm.jpg"),
+    specs: [
+      ["تعداد کلاویه", "88"],
+      ["نوع کلاویه", "GrandTouch Wooden keys with Graded hammer action"],
+      ["پلی فونی", "256"],
+      ["تعداد پدال", "3"],
+      ["کشور سازنده", "اندونزی"],
+      ["برند", "Yamaha"],
+    ],
   },
 ];
