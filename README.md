@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Styling
+
+For styling I mainly used `sx` property`.
+
+I also used `styled` function from `@material-ui/styles` for some other components.
+
+## Are you hiring?
+
+I'm looking for an entry level job. If you've any opportunity, please let [me](mailto:e.mahmoudi.a@gmail.com) know. 🙏
+
 ## Available Scripts
 
 In the project directory, you can run:
