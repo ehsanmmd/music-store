@@ -1,8 +1,8 @@
 import { Grid, Box, Typography, Button } from "@mui/material";
 import styled from "@emotion/styled";
 import { grey } from "@mui/material/colors";
-import { useContext } from "react";
-import UserContext from "../store/user-context";
+import { useDispatch } from "react-redux/es/exports";
+import { userActions } from "../store/user";
 
 const BoxStyle = styled(Box)(({ theme }) => ({
   padding: "20px",
@@ -22,10 +22,10 @@ const PaymentButton = styled(Button)(({ theme }) => ({
 }));
 
 const ProductBoard = (props) => {
-  const userCtx = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const addToCartHandler = (id) => () => {
-    userCtx.pushIntoCartItems(id);
+    dispatch(userActions.pushIntoCartItems(id));
   };
 
   return (
@@ -57,7 +57,11 @@ const ProductBoard = (props) => {
           <br />
           {props.item.specs.map((spec) => (
             <>
-              <Typography color={grey[600]} display="inline-block" key={spec[0]}>
+              <Typography
+                color={grey[600]}
+                display="inline-block"
+                key={spec[0]}
+              >
                 {spec[0]}:
               </Typography>
               <Typography display="inline-block">{spec[1]}</Typography>
@@ -68,7 +72,12 @@ const ProductBoard = (props) => {
       </Box>
       <Box>
         <Grid container>
-          <PaymentButton variant="contained" onClick={addToCartHandler(props.item.uid)}>اضافه کردن به سبد خرید</PaymentButton>
+          <PaymentButton
+            variant="contained"
+            onClick={addToCartHandler(props.item.uid)}
+          >
+            اضافه کردن به سبد خرید
+          </PaymentButton>
         </Grid>
       </Box>
     </Grid>

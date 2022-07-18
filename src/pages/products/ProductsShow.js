@@ -13,9 +13,9 @@ import ProductEmpty from "./ProductEmpty";
 import { grey } from "@mui/material/colors";
 import { productsList } from "../../api/productApi";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { useContext } from "react";
-import UserContext from "../../store/user-context";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux/es/exports";
+import { userActions } from "../../store/user";
 
 const CardStyle = styled(Card)(({ theme }) => ({
   height: "400px",
@@ -29,15 +29,15 @@ const CardStyle = styled(Card)(({ theme }) => ({
 }));
 
 const ProductsShow = (props) => {
-  const userCtx = useContext(UserContext);
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const cardMediaClickHandler = (uid) => () => {
     navigate(`/product/${uid}`);
   };
 
   const addToCartHandler = (id) => () => {
-    userCtx.pushIntoCartItems(id);
+    dispatch(userActions.pushIntoCartItems(id));
   };
 
   const filteredProducts = productsList.filter(
