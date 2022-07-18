@@ -2,8 +2,10 @@ import { Box, TextField } from "@mui/material";
 import { styled } from "@mui/system";
 import { grey } from "@mui/material/colors";
 import GreyButton from "../components/GreyButton";
-import { useState, useContext } from "react";
-import UserContext from "../store/user-context";
+import { useState } from "react";
+
+import { userActions } from "../store/user";
+import { useDispatch } from "react-redux";
 
 const BoxLoginStyle = styled(Box)(({ theme }) => ({
   borderRadius: theme.spacing(2),
@@ -19,7 +21,7 @@ const LoginPage = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const userCtx = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -33,7 +35,7 @@ const LoginPage = (props) => {
       username.trim().toLowerCase() === "ehsan" &&
       password.trim() === "1234"
     ) {
-      userCtx.onLogin();
+      dispatch(userActions.onLogin());
       window.history.back();
     }
   };

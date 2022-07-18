@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AppBar,
@@ -13,7 +13,7 @@ import {
   Avatar,
   Badge,
 } from "@mui/material";
-import UserContext from "../../store/user-context";
+import { useSelector, useDispatch } from "react-redux";
 
 import styled from "@emotion/styled";
 
@@ -27,6 +27,7 @@ import avatar from "../../images/20210214_162132_.jpg";
 import SearchArea from "../SearchArea";
 import UserMenu from "../UserMenu";
 import ProductsMenu from "../ProductsMenu";
+import { userActions } from "../../store/user";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
@@ -41,8 +42,12 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const MainHeader = () => {
   const [avatarAnchorElement, setavatarAnchorElement] = useState(null);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const cartItems = useSelector((state) => state.cartItems);
+
+  const dispatch = useDispatch();
+
   let navigate = useNavigate();
-  const userCtx = useContext(UserContext);
 
   const handleOpenUserMenu = (event) => {
     setavatarAnchorElement(event.currentTarget);
@@ -54,11 +59,10 @@ const MainHeader = () => {
 
   const handleLogoutUser = () => {
     setavatarAnchorElement(null);
-    userCtx.onLoggout();
+    dispatch(userActions.onLoggout());
   };
 
   const handleloginUser = () => {
-    // setisLoggedIn(true);
     navigate("/login");
     setavatarAnchorElement(null);
   };
@@ -97,7 +101,9 @@ const MainHeader = () => {
             alignItems: "center",
           }}
         >
-          {userCtx.isLoggedIn === true ? (
+          {console.log("in main Header")}
+          {console.log(isLoggedIn)}
+          {isLoggedIn === true ? (
             <Box>
               <IconButton onClick={handleOpenUserMenu}>
                 <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
@@ -114,11 +120,11 @@ const MainHeader = () => {
               <Typography textAlign="center">ورود</Typography>
             </StyledButton>
           )}
-          {userCtx.isLoggedIn === true && (
+          {isLoggedIn === true && (
             <>
               <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
               <IconButton onClick={handleCartIconClick}>
-                <Badge badgeContent={userCtx.cartItems.length} color="warning">
+                <Badge badgeContent={cartItems.length} color="warning">
                   <ShoppingCartIcon sx={{ margin: "5px" }} />
                 </Badge>
               </IconButton>
