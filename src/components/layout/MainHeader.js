@@ -4,7 +4,6 @@ import {
   AppBar,
   Toolbar,
   Box,
-  Container,
   Link,
   IconButton,
   Divider,
@@ -12,6 +11,7 @@ import {
   Typography,
   Avatar,
   Badge,
+  Grid,
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -76,61 +76,68 @@ const MainHeader = () => {
       <Toolbar
         sx={{
           backgroundColor: "#ffffff",
-          height: "10vh",
+          // height: "15vh",
         }}
       >
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            height: "100%",
-          }}
+        <Grid
+          container
+          justifyContent="space-between"
+          direction={{sm: "row", xs: "column"}}
         >
-          <Box sx={{ height: "60px", width: "120px" }}>
-            <Link href="/">
-              <img alt="" src={logo} />
-            </Link>
-          </Box>
-          <SearchArea />
-        </Container>
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-          }}
-        >
-          {console.log("in main Header")}
-          {console.log(isLoggedIn)}
-          {isLoggedIn === true ? (
-            <Box>
-              <IconButton onClick={handleOpenUserMenu}>
-                <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
-              </IconButton>
-              <UserMenu
-                onCloseUserMenu={handleCloseUserMenu}
-                onLogoutUser={handleLogoutUser}
-                avatarAnchorEl={avatarAnchorElement}
-              />
-            </Box>
-          ) : (
-            <StyledButton variant="outlined" onClick={handleloginUser}>
-              <LoginIcon sx={{ margin: "5px" }} />
-              <Typography textAlign="center">ورود</Typography>
-            </StyledButton>
-          )}
-          {isLoggedIn === true && (
-            <>
-              <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
-              <IconButton onClick={handleCartIconClick}>
-                <Badge badgeContent={cartItems.length} color="warning">
-                  <ShoppingCartIcon sx={{ margin: "5px" }} />
-                </Badge>
-              </IconButton>
-            </>
-          )}
-        </Container>
+          <Grid item xl={6} lg={6} md={8} sm={9}>
+            <Grid container alignItems="center">
+              <Grid item>
+                <Box sx={{ height: "60px", width: "120px" }}>
+                  <Link href="/">
+                    <img alt="" src={logo} />
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item flex={1}>
+                <SearchArea />
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item xl={6} lg={6} md={4} sm={3}>
+            <Grid container justifyContent="flex-end">
+              {isLoggedIn === true ? (
+                <Grid item>
+                  <IconButton onClick={handleOpenUserMenu}>
+                    <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
+                  </IconButton>
+                  <UserMenu
+                    onCloseUserMenu={handleCloseUserMenu}
+                    onLogoutUser={handleLogoutUser}
+                    avatarAnchorEl={avatarAnchorElement}
+                  />
+                </Grid>
+              ) : (
+                <Grid item>
+                  <StyledButton variant="outlined" onClick={handleloginUser}>
+                    <LoginIcon sx={{ margin: "5px" }} />
+                    <Typography textAlign="center">ورود</Typography>
+                  </StyledButton>
+                </Grid>
+              )}
+
+              {isLoggedIn === true && (
+                <>
+                  <Grid item>
+                    <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
+                  </Grid>
+                  <Grid item>
+                    <IconButton onClick={handleCartIconClick}>
+                      <Badge badgeContent={cartItems.length} color="warning">
+                        <ShoppingCartIcon sx={{ margin: "5px" }} />
+                      </Badge>
+                    </IconButton>
+                  </Grid>
+                </>
+              )}
+            </Grid>
+          </Grid>
+        </Grid>
       </Toolbar>
       <Toolbar
         sx={{
