@@ -82,7 +82,7 @@ const MainHeader = () => {
         <Grid
           container
           justifyContent="space-between"
-          direction={{sm: "row", xs: "column"}}
+          direction={{ sm: "row", xs: "column" }}
         >
           <Grid item xl={6} lg={6} md={8} sm={9}>
             <Grid container alignItems="center">
@@ -139,12 +139,7 @@ const MainHeader = () => {
           </Grid>
         </Grid>
       </Toolbar>
-      <Toolbar
-        sx={{
-          backgroundColor: "#ffffff",
-          margin: "0 30px",
-        }}
-      >
+      <Toolbar>
         <ProductsMenu />
       </Toolbar>
     </AppBar>

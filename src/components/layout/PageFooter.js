@@ -5,7 +5,7 @@ const PageFooter = (props) => {
   return (
     <Box sx={{ backgroundColor: grey[800], height: "10rem" }}>
       <Grid container justifyContent="center" height="100%" alignItems="center">
-        <Typography color="#ffffff">
+        <Typography color="#ffffff" textAlign="center">
         © تمامی حقوق این وب سایت برای شرکت موزیک استور محفوظ است.
         </Typography>{" "}
       </Grid>
