@@ -10,9 +10,15 @@ const BoxStyle = styled(Box)(({ theme }) => ({
 const CartPageItemCard = (props) => {
   return (
     <Grid item>
-      <BoxStyle width="auto">
-        <Grid container direction="row" justifyContent="space-between">
-          <img src={props.children.imageSmUrl} alt="" height="150px" />
+      <BoxStyle>
+        <Grid container justifyContent="space-between">
+          <Grid item>
+            <Box
+              component="img"
+              src={props.children.imageSmUrl}
+              height="150px"
+            />
+          </Grid>
           <Grid item>
             <Grid
               container
@@ -30,7 +36,10 @@ const CartPageItemCard = (props) => {
               </Grid>
               <Grid item textAlign="left">
                 <Typography>{props.children.price} تومان</Typography>
-                <IconButton sx={{ mt: "10px" }} onClick = {props.onDeleteClick(props.children.uid)}>
+                <IconButton
+                  sx={{ mt: "10px" }}
+                  onClick={props.onDeleteClick(props.children.uid)}
+                >
                   <DeleteIcon />
                 </IconButton>
               </Grid>

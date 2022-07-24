@@ -17,10 +17,9 @@ const Billing = (props) => {
   });
 
   return (
-    <BoxStyle width="60%" m="0 auto 0 auto">
+    <BoxStyle m="0 auto 0 auto">
       <Grid
         container
-        direction="row"
         justifyContent="space-between"
         color={grey[600]}
       >
@@ -31,7 +30,7 @@ const Billing = (props) => {
           <Typography>{totalPrice} تومان</Typography>
         </Grid>
       </Grid>
-      <Grid container direction="row" justifyContent="space-between">
+      <Grid container justifyContent="space-between">
         <Grid item>
           <Typography>جمع سبد خرید</Typography>
         </Grid>
@@ -44,7 +43,6 @@ const Billing = (props) => {
       <Grid
         color="red"
         container
-        direction="row"
         justifyContent="space-between"
       >
         <Grid item>
