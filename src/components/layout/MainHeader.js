@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AppBar,
@@ -23,11 +23,11 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
 
 import logo from "../../logo/yamaha.svg";
-import avatar from "../../images/20210214_162132_.jpg";
 import SearchArea from "../SearchArea";
 import UserMenu from "../UserMenu";
 import ProductsMenu from "../ProductsMenu";
 import { userActions } from "../../store/user";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: "15px",
@@ -42,8 +42,9 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const MainHeader = () => {
   const [avatarAnchorElement, setavatarAnchorElement] = useState(null);
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  // const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const cartItems = useSelector((state) => state.cartItems);
+  const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
 
   const dispatch = useDispatch();
 
@@ -58,12 +59,14 @@ const MainHeader = () => {
   };
 
   const handleLogoutUser = () => {
+    logout({ logoutParams: { returnTo: window.location.origin } });
     setavatarAnchorElement(null);
     dispatch(userActions.onLoggout());
   };
 
   const handleloginUser = () => {
-    navigate("/login");
+    // navigate("/login");
+    loginWithRedirect();
     setavatarAnchorElement(null);
   };
 
@@ -101,10 +104,11 @@ const MainHeader = () => {
 
           <Grid item xl={6} lg={6} md={4} sm={3}>
             <Grid container justifyContent="flex-end">
-              {isLoggedIn === true ? (
+              {isAuthenticated === true ? (
                 <Grid item>
                   <IconButton onClick={handleOpenUserMenu}>
-                    <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar>
+                    {/* <Avatar alt="Ehsan Mahmoudi" src={avatar}></Avatar> */}
+                    <Avatar alt="Ehsan Mahmoudi" src={user.picture}></Avatar>
                   </IconButton>
                   <UserMenu
                     onCloseUserMenu={handleCloseUserMenu}
@@ -121,7 +125,7 @@ const MainHeader = () => {
                 </Grid>
               )}
 
-              {isLoggedIn === true && (
+              {isAuthenticated === true && (
                 <>
                   <Grid item>
                     <Divider orientation="vertical" sx={{ height: "2.5rem" }} />
